@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.getcwd())
+
 import pickle
 from utilss.Preprocess import Preprocess
 
@@ -16,7 +21,7 @@ pos = p.pos(sent)
 
 # 품사 태그 없이 키워드 출력
 keywords = p.get_keywords(pos, without_tag=True)
-for word = keywords:
+for word in keywords:
     try:
         print(word, word_index[word])
     except KeyError:
