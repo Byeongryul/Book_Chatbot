@@ -3,7 +3,7 @@ from konlpy.tag import Komoran
 class Preprocess:
     def __init__(self, userdic = None):
         # 형태소 분석기 초기화
-        self.Komoran = Komoran(userdic = userdic)
+        self.komoran = Komoran(userdic = userdic)
 
         # 제외할 품사
         # 참조 : https://docs.komoran.kr/firststep/postypes.html

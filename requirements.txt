@@ -1,0 +1,3 @@
+konlpy
+PyKomoran
+gensim
