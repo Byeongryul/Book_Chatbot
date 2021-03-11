@@ -10,7 +10,7 @@ from tensorflow.keras import preprocessing
 
 # 의도 분류 모델 모듈
 class IntentModel:
-    def __init__(slef, model_name, preprocess):
+    def __init__(self, model_name, preprocess):
         # 의도 클래스별 레이블
         self.labels = {0:'중간', 1:'부정', 2:'긍정', 3:'예약', 4:'기타'}
         # 의도 분류 모델 불러오기

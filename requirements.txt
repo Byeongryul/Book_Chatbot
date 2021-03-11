@@ -1,3 +1,4 @@
 konlpy
 PyKomoran
 gensim
+seqeval
