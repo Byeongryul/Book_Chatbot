@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.getcwd())
+
 # 필요 모듈 임폴트
 import pandas as pd
 import tensorflow as tf
@@ -30,8 +35,8 @@ padded_seqs = preprocessing.sequence.pad_sequences(sequences, maxlen = MAX_SEQ_L
 # 학습용, 검증용, 테스트용 데이터셋 생성
 # 학습, 검증, 테스트 생성
 # 비율 7 : 2 : 1
-ds = tf.data.Dataset.from_tensor_slices((padded_seqs, labels))
-ds = ds.shuffle(len(features))
+ds = tf.data.Dataset.from_tensor_slices((padded_seqs, intents))
+ds = ds.shuffle(len(queries))
 
 train_size = int(len(padded_seqs) * 0.7)
 val_size = int(len(padded_seqs) * 0.2)
@@ -45,7 +50,7 @@ test_ds = ds.skip(train_size + val_size).take(test_size).batch(20)
 dropout_prob = 0.5
 EMB_SIZE = 128
 EPOCH = 5
-VOCAB_SIZE = len(word_index) + 1 # 전체 단어 수
+VOCAB_SIZE = len(p.word_index) + 1 # 전체 단어 수
 
 # CNN 모델 정의
 input_layer = Input(shape=(MAX_SEQ_LEN,))
@@ -94,4 +99,4 @@ print('Accuracy: %f' % (accuracy * 100))
 print('loss: %f' % (loss))
 
 # 모델 저장
-model.save('model/intent/intent_model.h5')
+model.save('models/intent/intent_model.h5')
