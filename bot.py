@@ -1,8 +1,11 @@
 #-*- coding:utf-8-*-
 import sys
+sys.path.append('/content/Book_Chatbot')
+'''
 import os
 
 sys.path.append(os.getcwd())
+'''
 
 import threading
 import json
