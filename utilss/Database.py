@@ -25,6 +25,16 @@ class Database:
             db = self.db_name,
             charset = self.charset
         )
+
+    def close(self):
+        if self.conn is None:
+            return
+        if not self.conn.open:
+            self.conn = None
+            return
+        self.conn.close()
+        self.conn = None
+        
     # SQL 구문 실행
     def execute(self, sql):
         last_row_id = -1

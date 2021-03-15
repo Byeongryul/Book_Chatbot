@@ -7,7 +7,7 @@ class FindAnswer:
         sql = 'select * from chatbot_train_data'
         if intent_name != None and ner_tags == None:
             sql = sql + " where intent='{}'".format(intent_name)
-        elif intent_name != None and ner_tags @= None:
+        elif intent_name != None and ner_tags != None:
             where = ' where intent="%S"'%intent_name
             if len(ner_tags) > 0:
                 where += ' and ('
@@ -32,7 +32,7 @@ class FindAnswer:
         return (answer['answer'], answer['answer_image'])
 
     # NER 태그를 실제 입력된 단어로 변환
-    def tag_to word(self, ner_predicts, answer):
+    def tag_to_word(self, ner_predicts, answer):
         for word, tag in ner_predicts:
             # 변환해야 하는 태그가 있는 경우 추가
             if tag == 'B_FOOD':

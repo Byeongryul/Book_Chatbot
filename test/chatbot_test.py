@@ -20,7 +20,7 @@ query = "오전에 탕수육 10개 주문합니다."
 from models.intent.IntentModel import IntentModel
 intent = IntentModel(model_name='models/intent/intent_model.h5', preprocess=p)
 predict = intent.predict_class(query)
-intent_name = intent.labels(predict)
+intent_name = intent.labels[predict]
 
 from models.ner.NerModel import NerModel
 ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p)
@@ -42,5 +42,7 @@ try:
     answer = f.tag_to_word(predicts, answer_text)
 except:
     answer = "죄송해요, 무슨 말인지 모르겠어요."
+
 print("답변 : ", answer)
+
 db.close()
