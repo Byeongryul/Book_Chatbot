@@ -2,3 +2,4 @@ konlpy
 PyKomoran
 gensim
 seqeval
+pymysql
