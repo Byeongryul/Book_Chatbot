@@ -11,7 +11,7 @@ from utilss.Preprocess import Preprocess
 p = Preprocess(word2index_dic='train_tools/dict/chatbot_dict.bin', userdic='utilss/user_dic.tsv')
 
 db = Database(
-    host=BD_HOST, user=DB_USER, password=DB_PASSWARD, db_name=DB_NAME
+    host=DB_HOST, user=DB_USER, password=DB_PASSWARD, db_name=DB_NAME
 )
 db.connect()
 

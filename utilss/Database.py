@@ -1,5 +1,5 @@
 import pymysql
-import pymysql.corsors
+import pymysql.cursors
 import logging
 
 class Database:
