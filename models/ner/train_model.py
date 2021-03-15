@@ -115,7 +115,7 @@ from seqeval.metrics import f1_score, classification_report
 # 테스트 데이터셋의 NER 예측
 y_predicted = model.predict(x_test)
 pred_tags = sequences_to_tag(y_predicted)
-test_tages = sequences_to_tag(y_test)
+test_tags = sequences_to_tag(y_test)
 
 print(classification_report(test_tags, pred_tags))
 print("F1-score: {:.1%}".format(f1_score(test_tags, pred_tags)))
