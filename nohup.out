@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "bot.py", line 10, in <module>
-    from config.DatabaseConfig import *
-ImportError: No module named config.DatabaseConfig
-Traceback (most recent call last):
-  File "bot.py", line 10, in <module>
-    from config.DatabaseConfig import *
-ImportError: No module named config.DatabaseConfig

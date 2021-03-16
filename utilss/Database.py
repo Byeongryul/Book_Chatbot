@@ -29,10 +29,13 @@ class Database:
     def close(self):
         if self.conn is None:
             return
+
         if not self.conn.open:
             self.conn = None
             return
+
         self.conn.close()
+        
         self.conn = None
         
     # SQL 구문 실행
@@ -40,7 +43,7 @@ class Database:
         last_row_id = -1
         try:
             with self.conn.cursor() as cursor:
-                curser.execute(sql)
+                cursor.execute(sql)
             self.conn.commit()
             last_row_id = cursor.lastrowid
             # logging.debug("excute last_row_id : %d", last_row_id)
@@ -54,7 +57,7 @@ class Database:
         result = None
 
         try:
-            with self.conn.cursor(pymysql.cursor.DictCursor) as cursor:
+            with self.conn.cursor(pymysql.cursors.DictCursor) as cursor:
                 cursor.execute(sql)
                 result = cursor.fetchone()
         except Exception as ex:
@@ -67,7 +70,7 @@ class Database:
         result = None
 
         try:
-            with self.conn.cursor(pymysql.cursor.DictCursor) as cursor:
+            with self.conn.cursor(pymysql.cursors.DictCursor) as cursor:
                 cursor.execute(sql)
                 result = cursor.fetchall()
         except Exception as ex:

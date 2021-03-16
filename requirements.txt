@@ -3,3 +3,5 @@ PyKomoran
 gensim
 seqeval
 pymysql
+tensorflow
+pandas

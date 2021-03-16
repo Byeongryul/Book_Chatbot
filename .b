@@ -1,1 +1,0 @@
-export PYTHONPATH="${PYTHONPATH}:/content/Book_Chatbot"

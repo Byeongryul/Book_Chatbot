@@ -53,6 +53,12 @@ def to_client(conn, addr, params):
         ner_predicts = ner.predict(query)
         ner_tags = ner.predict_tags(query)
 
+        print('='*40)
+        print("의도 파악 : ", intent_name)
+        print('개체명 인식 : ', ner_predicts)
+        print('답변 검색에 필요한 NER 태그 : ', ner_tags)
+        print("="*40)
+
         # 답변 검색
         try:
             f = FindAnswer(db)
@@ -70,7 +76,7 @@ def to_client(conn, addr, params):
         }
         
         # json 객체를 전송 가능한 문자열로 변환
-        message = josn.dumps(send_json_data_str)
+        message = json.dumps(send_json_data_str)
         conn.send(message.encode()) # 응답 전송
 
     except Exception as ex:
@@ -96,7 +102,7 @@ if __name__ == '__main__':
 
     while True:
         conn, addr = bot.ready_for_client()
-        params - {
+        params = {
             "db":db
         }
 

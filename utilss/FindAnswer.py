@@ -8,7 +8,7 @@ class FindAnswer:
         if intent_name != None and ner_tags == None:
             sql = sql + " where intent='{}'".format(intent_name)
         elif intent_name != None and ner_tags != None:
-            where = ' where intent="%S"'%intent_name
+            where = ' where intent="%s"'%intent_name
             if len(ner_tags) > 0:
                 where += ' and ('
                 for ne in ner_tags:
