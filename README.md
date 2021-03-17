@@ -8,3 +8,7 @@
 - test		챗봇 개발에 필요한 테스트 코드
 - train_tools	챗봇 학습툴 관련 파일
 - utils		챗봇 개발에 필요한 유틸리티 라이브러리
+
+### JAVA_HOME 문제-
+- 환경변수에 JAVA_HOME 추가 요망
+- jdk\bin\server 까지
