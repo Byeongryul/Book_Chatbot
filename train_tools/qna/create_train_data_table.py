@@ -30,7 +30,6 @@ try:
         PRIMARY KEY (`id`))
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
-
     '''
 
     # 테이블 생성
